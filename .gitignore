@@ -1,0 +1,69 @@
+# Node modules
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# React Native / Expo
+.expo/
+.expo-shared/
+dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# Android
+android/app/debug
+android/app/release
+android/.gradle
+android/local.properties
+android/captures/
+android/.idea
+android/.classpath
+android/.c9/
+android/*.launch
+android/.settings/
+android/*.sublime-workspace
+
+# iOS
+ios/Pods/
+ios/Podfile.lock
+ios/.xcode.env
+ios/Flutter/Flutter.podspec
+build/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+.env
+.env.local
+.env.*.local
+
+# Miscellaneous
+*.log
+*.tmp
+.cache/
+coverage/
+*.bak
+
+# OS
+Thumbs.db
+.AppleDouble
+.LSOverride
+*.bak
+.idea
+.gradle
+local.properties
+gradlew.bat
+gradlew
