@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-// Import screens
 import HomeScreen from './screens/HomeScreen';
-import SolverScreen from './screens/SolverScreen';
 import TutorialScreen from './screens/TutorialScreen';
+import SolverScreen from './screens/SolverScreen';
 import VisualizerScreen from './screens/VisualizerScreen';
 
 const Tab = createBottomTabNavigator();
@@ -22,10 +20,10 @@ export default function App() {
 
             if (route.name === 'Home') {
               iconName = focused ? 'home' : 'home-outline';
-            } else if (route.name === 'Solver') {
-              iconName = focused ? 'puzzle' : 'puzzle-outline';
             } else if (route.name === 'Tutorial') {
               iconName = focused ? 'school' : 'school-outline';
+            } else if (route.name === 'Solver') {
+              iconName = focused ? 'puzzle' : 'puzzle-outline';
             } else if (route.name === 'Visualizer') {
               iconName = focused ? 'cube' : 'cube-outline';
             }
@@ -34,42 +32,50 @@ export default function App() {
           },
           tabBarActiveTintColor: '#6200ee',
           tabBarInactiveTintColor: '#999',
-          headerStyle: styles.header,
-          headerTintColor: '#fff',
-          headerTitleStyle: styles.headerTitle,
+          headerShown: false,
+          tabBarStyle: {
+            backgroundColor: '#fff',
+            borderTopColor: '#e0e0e0',
+            borderTopWidth: 1,
+            paddingBottom: 5,
+            paddingTop: 5,
+            height: 60,
+          },
+          tabBarLabelStyle: {
+            fontSize: 12,
+            fontWeight: '500',
+          },
         })}
       >
         <Tab.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: 'Rubik\'s Cube Solver' }}
-        />
-        <Tab.Screen
-          name="Solver"
-          component={SolverScreen}
-          options={{ title: 'Solver' }}
+          options={{
+            tabBarLabel: 'Home',
+          }}
         />
         <Tab.Screen
           name="Tutorial"
           component={TutorialScreen}
-          options={{ title: 'Tutorial' }}
+          options={{
+            tabBarLabel: 'Learn',
+          }}
+        />
+        <Tab.Screen
+          name="Solver"
+          component={SolverScreen}
+          options={{
+            tabBarLabel: 'Solve',
+          }}
         />
         <Tab.Screen
           name="Visualizer"
           component={VisualizerScreen}
-          options={{ title: 'Visualizer' }}
+          options={{
+            tabBarLabel: 'View',
+          }}
         />
       </Tab.Navigator>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  header: {
-    backgroundColor: '#6200ee',
-  },
-  headerTitle: {
-    fontWeight: 'bold',
-    fontSize: 18,
-  },
-});
